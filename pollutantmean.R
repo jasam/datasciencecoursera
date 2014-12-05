@@ -23,7 +23,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   ## Transform file names into number
   idsFiles = as.numeric(sub(".csv$","",files))
   
-  ## Select only files about paremeter selected
+  ## Select only files about parameter selected
   files = files[idsFiles %in% id]
   
   ## Load data from files selected
@@ -33,5 +33,5 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   dataFrame = do.call(rbind.data.frame,dataFiles)
   
   ## Calculate mean
-  mean(Data[,pollutant],na.rm=TRUE)
+  mean(dataFrame[,pollutant],na.rm=TRUE)
 }
