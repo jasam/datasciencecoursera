@@ -21,7 +21,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   files = dir(directory)
   
   ## Transform file names into number
-  idsFiles : 1:332
+  idsFiles = 1:332
   
   ## Select only files about parameter selected
   files = files[idsFiles %in% id]
