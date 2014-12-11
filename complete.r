@@ -1,8 +1,8 @@
-complete <- function(directory, pollutant, id = 1:332) {
+complete <- function(directory, id = 1:332) {
   
   ## Part 2
   ## Author: Javier Samir Rey
-  ## Create Date: 04/12/2014
+  ## Create Date: 09/12/2014
   
   ## 'directory' is a character vector of length 1 indicating
   ## the location of the CSV files
@@ -18,6 +18,8 @@ complete <- function(directory, pollutant, id = 1:332) {
   ## where 'id' is the monitor ID number and 'nobs' is the
   ## number of complete cases
   
+  ranges = id 
+  
   ## List files from directory 
   files = dir(directory)
   
@@ -27,23 +29,13 @@ complete <- function(directory, pollutant, id = 1:332) {
   ## Select only files about parameter selected
   files = files[idsFiles %in% id]
   
-  ## Load data from files selected
-  dataFiles = lapply(file.path(directory,files),read.csv)
-  
-  ## Generate data frame from data loaded
-  dataFrame = do.call(rbind.data.frame,dataFiles)
-  
-  nrow(na.omit(dataFrame))
-  sum(complete.cases(dataFrame))
-  
-  df <- data.frame(x = numeric(), y = numeric())
-  
-  for(i in id) {
-    dataFiles = lapply(file.path(directory,files[i]),read.csv)
-    df <- rbind(df, data.frame(x = id, y = sum(complete.cases(dataFrame))))
-  } 
+  observations <- data.frame(id = numeric(), nobs = numeric())
 
-  df <- data.frame(x = numeric(), y = numeric())
-  df <- rbind(df, data.frame(x = 1, y = 1))
-  
+  for(i in seq_along(ranges)) {
+	position = ranges[i]
+	dataFiles = lapply(file.path(directory,files[position]),read.csv)
+	dataFrame = do.call(rbind.data.frame,dataFiles)
+	observations <- rbind(observations, data.frame(id = position, nobs = sum(complete.cases(dataFrame))))
+  } 
+  observations
 }
