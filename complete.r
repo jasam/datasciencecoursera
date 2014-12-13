@@ -33,7 +33,7 @@ complete <- function(directory, id = 1:332) {
 
   for(i in seq_along(ranges)) {
 	position = ranges[i]
-	dataFiles = lapply(file.path(directory,files[position]),read.csv)
+	dataFiles = lapply(file.path(directory,files[i]),read.csv)
 	dataFrame = do.call(rbind.data.frame,dataFiles)
 	observations <- rbind(observations, data.frame(id = position, nobs = sum(complete.cases(dataFrame))))
   } 
