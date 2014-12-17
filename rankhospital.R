@@ -49,14 +49,11 @@ rankhospital <- function(state, outcome, num = "best") {
     ranking = subSetState[order(subSetState[,2], subSetState[,23]),c(2,23)] 
   }
   
-  
-  
   ## ADD ranking like other column to data frame
   ranking = transform(ranking, rank = ave(ranking[,2], 
                                           FUN = function(x) rank(x, ties.method = "first")))
   
-  ## Only for DEBUG
-  ##ranking = ranking[order(ranking[,3]),c(1,2,3)]
+  ranking = ranking[order(ranking[,3]),c(1,2,3)]
   
   HEAD_VALUE = 1
   
@@ -65,15 +62,24 @@ rankhospital <- function(state, outcome, num = "best") {
   }
   
   else if (num == "worst") {
+    ## Complete cases only
+    ranking =  ranking[complete.cases(ranking),]
     tailRank = tail(ranking[3], n=1)
-    hospitalRank = ranking[ranking$rank == tailRank, c(1)] 
+    hospitalRank = ranking[ranking$rank == tailRank[,1], c(1)] 
   }
   
   else {
     hospitalRank = ranking[ranking$rank == num, c(1)] 
   }
   
+  ## Return NA if result not available
   
-  hospitalRank
+  if (length(hospitalRank) == 0) {
+      NA
+  }
+  
+  else {
+      hospitalRank
+  }
   
 }
