@@ -1,0 +1,98 @@
+Study design
+=================
+Is taken: Human Activity Recognition Using Smartphones Dataset and then the information is mixed to obtain a clean data set only 
+with observations of mean and standard deviation by grouping by subject and activity
+
+Taken following the vars only contains word "mean" and "std"
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+a total vars: 81.
+
+Subject
+Activity
+tBodyAccmeanX
+tBodyAccmeanY
+tBodyAccmeanZ
+tGravityAccmeanX
+tGravityAccmeanY
+tGravityAccmeanZ
+tBodyAccJerkmeanX
+tBodyAccJerkmeanY
+tBodyAccJerkmeanZ
+tBodyGyromeanX
+tBodyGyromeanY
+tBodyGyromeanZ
+tBodyGyroJerkmeanX
+tBodyGyroJerkmeanY
+tBodyGyroJerkmeanZ
+tBodyAccMagmean
+tGravityAccMagmean
+tBodyAccJerkMagmean
+tBodyGyroMagmean
+tBodyGyroJerkMagmean
+fBodyAccmeanX
+fBodyAccmeanY
+fBodyAccmeanZ
+fBodyAccmeanFreqX
+fBodyAccmeanFreqY
+fBodyAccmeanFreqZ
+fBodyAccJerkmeanX
+fBodyAccJerkmeanY
+fBodyAccJerkmeanZ
+fBodyAccJerkmeanFreqX
+fBodyAccJerkmeanFreqY
+fBodyAccJerkmeanFreqZ
+fBodyGyromeanX
+fBodyGyromeanY
+fBodyGyromeanZ
+fBodyGyromeanFreqX
+fBodyGyromeanFreqY
+fBodyGyromeanFreqZ
+fBodyAccMagmean
+fBodyAccMagmeanFreq
+fBodyBodyAccJerkMagmean
+fBodyBodyAccJerkMagmeanFreq
+fBodyBodyGyroMagmean
+fBodyBodyGyroMagmeanFreq
+fBodyBodyGyroJerkMagmean
+fBodyBodyGyroJerkMagmeanFreq
+tBodyAccstdX
+tBodyAccstdY
+tBodyAccstdZ
+tGravityAccstdX
+tGravityAccstdY
+tGravityAccstdZ
+tBodyAccJerkstdX
+tBodyAccJerkstdY
+tBodyAccJerkstdZ
+tBodyGyrostdX
+tBodyGyrostdY
+tBodyGyrostdZ
+tBodyGyroJerkstdX
+tBodyGyroJerkstdY
+tBodyGyroJerkstdZ
+tBodyAccMagstd
+tGravityAccMagstd
+tBodyAccJerkMagstd
+tBodyGyroMagstd
+tBodyGyroJerkMagstd
+fBodyAccstdX
+fBodyAccstdY
+fBodyAccstdZ
+fBodyAccJerkstdX
+fBodyAccJerkstdY
+fBodyAccJerkstdZ
+fBodyGyrostdX
+fBodyGyrostdY
+fBodyGyrostdZ
+fBodyAccMagstd
+fBodyBodyAccJerkMagstd
+fBodyBodyGyroMagstd
+fBodyBodyGyroJerkMagstd
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
