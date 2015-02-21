@@ -18,7 +18,8 @@ png(filename = "plot3.png",
     units = "px", bg = "transparent")
 
 # Generate plot
-qplot(Year, Emissions, data=tidyData2, facets = Type ~ ., color=Type, geom = c("line"), title = "Emissions for Baltimore City by type")
+g = qplot(Year, Emissions, data=tidyData2, facets = Type ~ ., color=Type, geom = c("line"), title = "Emissions for Baltimore City by type")
+g + ggtitle("Total Emissions in Baltimore City from 1999 to 2008")
 
 # off PNG device
 dev.off()
